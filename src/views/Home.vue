@@ -84,12 +84,14 @@ export default {
             headers: {
               "Access-Control-Allow-Origin": "*",
               "Access-Control-Allow-Methods": "GET",
-              "Access-Control-Allow-Headers": "*"
+              "Access-Control-Allow-Headers": "*",
+              "Access-Control-Expose-Headers": "Content-Length, X-JSON"
             }
           });
           axiosInstance
             .get( 'https://iawek-servicio-web.herokuapp.com/recetas')
             .then(response => (this.recetas = response.data))
+            
       }
        
     }
