@@ -50,7 +50,7 @@ export default {
     methods: {
       getIngredientes(){
           axios
-            .get('http://localhost:8080/ingredientes')
+            .get('https://frozensea-vue.herokuapp.com/ingredientes')
             .then(response => (this.ingredientes = response.data))
       },
 

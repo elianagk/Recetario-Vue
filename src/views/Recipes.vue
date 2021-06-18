@@ -47,26 +47,26 @@ export default {
     methods: {
       getReceta(){
          axios
-            .get('http://localhost:8080/receta/'+ this.id_receta)
+            .get('https://frozensea-vue.herokuapp.com/receta/'+ this.id_receta)
             .then(response => (this.recetas = response.data))
             
       },
       getCategorias(){
         axios
-          .get('http://localhost:8080/receta/'+ this.id_receta + '/categorias')
+          .get('https://frozensea-vue.herokuapp.com/receta/'+ this.id_receta + '/categorias')
           .then(response => response.data.forEach(element => { 
              axios
-              .get('http://localhost:8080/receta/'+ this.id_receta + '/categorias/'+ element.id_categoria)
+              .get('https://frozensea-vue.herokuapp.com/receta/'+ this.id_receta + '/categorias/'+ element.id_categoria)
               .then(res => this.categorias.push(res.data))
           }))
          
       },
       getIngredientes(){
         axios
-          .get('http://localhost:8080/receta/'+ this.id_receta + '/ingredientes')
+          .get('https://frozensea-vue.herokuapp.com/receta/'+ this.id_receta + '/ingredientes')
           .then(response => response.data.forEach(element => { 
              axios
-              .get('http://localhost:8080/receta/'+ this.id_receta + '/ingredientes/'+ element.id_ingrediente)
+              .get('https://frozensea-vue.herokuapp.com/receta/'+ this.id_receta + '/ingredientes/'+ element.id_ingrediente)
               .then(res => (this.ingredientes.push(res.data)))
               .then(this.cantidades.push(element.cantidad))
           

@@ -40,11 +40,11 @@ export default {
     methods: {
       getReceta(){
          axios
-            .get('http://localhost:8080/ingrediente/'+this.id_ingrediente+'/receta')
+            .get('https://frozensea-vue.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta')
             .then(response => response.data.forEach(element => {
                     
                 axios
-                .get('http://localhost:8080/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
+                .get('https://frozensea-vue.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
                 .then(res => this.recetas.push(res.data))
  
                 }))
