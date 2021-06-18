@@ -86,7 +86,7 @@ export default {
             }
           });
           axiosInstance
-            .get( 'http://iawek-servicio-web.herokuapp.com/recetas')
+            .get( 'https://iawek-servicio-web.herokuapp.com/recetas')
             .then(response => (this.recetas = response.data))
       }
        
