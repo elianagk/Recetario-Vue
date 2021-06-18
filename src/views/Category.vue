@@ -51,7 +51,7 @@ export default {
     methods: {
       getCategorias(){
           axios
-            .get('https://frozensea-vue.herokuapp.com/categorias')
+            .get('https://iawek-servicio-web.herokuapp.com/categorias')
             .then(response => (this.categorias = response.data))
       },
 

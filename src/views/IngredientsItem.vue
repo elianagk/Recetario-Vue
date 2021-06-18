@@ -40,11 +40,11 @@ export default {
     methods: {
       getReceta(){
          axios
-            .get('https://frozensea-vue.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta')
+            .get('https://iawek-servicio-web.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta')
             .then(response => response.data.forEach(element => {
                     
                 axios
-                .get('https://frozensea-vue.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
+                .get('https://iawek-servicio-web.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
                 .then(res => this.recetas.push(res.data))
  
                 }))
