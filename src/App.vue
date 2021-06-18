@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <b-navbar type="dark" variant="dark" class="justify-content-center">
-      <b-navbar-brand to="/" class="mx-0"><h1>Recetario</h1></b-navbar-brand>      
-    </b-navbar>
-  
-    <router-view/>  
+  <b-navbar toggleable="lg" type="dark" variant="dark">
+    <b-navbar-brand to="/" >Recetario</b-navbar-brand>
 
-  </div>
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav>
+        <b-nav-item to="/categorias">Categorias</b-nav-item>
+        <b-nav-item to="/ingredientes">Ingredientes</b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+  <router-view />
+</div>
 </template>
 
 <style lang="css">

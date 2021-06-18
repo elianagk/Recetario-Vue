@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Category from '../views/Category.vue'
 import CategoryItem from '../views/CategoryItem.vue'
-import RecipesItem from '../views/Recipes.vue'
+import Recipes from '../views/Recipes.vue'
 import Ingredients from '../views/Ingredients.vue'
 import IngredientsItem from '../views/IngredientsItem.vue'
 
@@ -20,12 +20,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    props: true,
     component: Home
   },
   {
     path: '/receta/:id_receta',
     name: 'Recetas',
-    component: RecipesItem
+    component: Recipes
   },
   {
     path: '/categorias',
@@ -33,8 +34,13 @@ const routes = [
     component: Category
   },
   {
-    path: '/categorias/id_categoria',
-    name: 'CategoriasItem',
+    path: '/categorias/receta/:id_receta',
+    name: 'Receta-Categoria',
+    component: Recipes
+  },
+  {
+    path: '/categorias/:id_categoria',
+    name: 'CategoriasReceta',
     component: CategoryItem
   },
   {
@@ -43,9 +49,14 @@ const routes = [
     component: Ingredients
   },
   {
-    path: '/ingredientes/id_ingrediente',
+    path: '/ingredientes/:id_ingrediente',
     name: 'IngredientesItem',
     component: IngredientsItem
+  },
+  {
+    path: '/ingredientes/receta/:id_receta',
+    name: 'Receta-Ingrediente',
+    component: Recipes
   },
 ]
 
