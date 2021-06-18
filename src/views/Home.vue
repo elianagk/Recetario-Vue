@@ -59,7 +59,8 @@ export default {
     data() {
       return {
           recetas: null,
-          search: ''
+          search: '',
+          
           
       }   
     },
@@ -77,8 +78,15 @@ export default {
     },
     methods: {
       getRecetas(){
-          axios
-            .get('https://iawek-servicio-web.herokuapp.com/recetas')
+        
+          
+          const axiosInstance = axios.create({
+            headers: {
+              "Access-Control-Allow-Origin": "*"
+            }
+          });
+          axiosInstance
+            .get( 'http://iawek-servicio-web.herokuapp.com/recetas')
             .then(response => (this.recetas = response.data))
       }
        
