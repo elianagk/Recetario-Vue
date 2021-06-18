@@ -79,8 +79,7 @@ export default {
       getRecetas(){
 
           axios
-
-            .get('http://localhost:8080/recetas')
+            .get('https://iawek-servicio-web.herokuapp.com/recetas')
             .then(response => (this.recetas = response.data))
       }
        
