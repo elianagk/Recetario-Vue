@@ -51,7 +51,8 @@ export default {
     methods: {
       getCategorias(){
           axios
-            .get('https://iawek-servicio-web.herokuapp.com/categorias')
+
+            .get('http://localhost:8080/categorias')
             .then(response => (this.categorias = response.data))
       },
 

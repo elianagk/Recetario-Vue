@@ -47,26 +47,29 @@ export default {
     methods: {
       getReceta(){
          axios
-            .get('https://iawek-servicio-web.herokuapp.com/receta/'+ this.id_receta)
+
+            .get('http://localhost:8080/receta/'+ this.id_receta)
             .then(response => (this.recetas = response.data))
             
       },
       getCategorias(){
         axios
-          .get('https://iawek-servicio-web.herokuapp.com/receta/'+ this.id_receta + '/categorias')
+
+          .get('http://localhost:8080/receta/'+ this.id_receta + '/categorias')
           .then(response => response.data.forEach(element => { 
              axios
-              .get('https://iawek-servicio-web.herokuapp.com/receta/'+ this.id_receta + '/categorias/'+ element.id_categoria)
+              .get('http://localhost:8080/receta/'+ this.id_receta + '/categorias/'+ element.id_categoria)
               .then(res => this.categorias.push(res.data))
           }))
          
       },
       getIngredientes(){
         axios
-          .get('https://iawek-servicio-web.herokuapp.com/receta/'+ this.id_receta + '/ingredientes')
+
+          .get('http://localhost:8080/receta/'+ this.id_receta + '/ingredientes')
           .then(response => response.data.forEach(element => { 
              axios
-              .get('https://iawek-servicio-web.herokuapp.com/receta/'+ this.id_receta + '/ingredientes/'+ element.id_ingrediente)
+              .get('http://localhost:8080/receta/'+ this.id_receta + '/ingredientes/'+ element.id_ingrediente)
               .then(res => (this.ingredientes.push(res.data)))
               .then(this.cantidades.push(element.cantidad))
           

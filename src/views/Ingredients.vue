@@ -50,7 +50,8 @@ export default {
     methods: {
       getIngredientes(){
           axios
-            .get('https://iawek-servicio-web.herokuapp.com/ingredientes')
+
+            .get('http://localhost:8080/ingredientes')
             .then(response => (this.ingredientes = response.data))
       },
 

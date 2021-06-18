@@ -40,11 +40,12 @@ export default {
     methods: {
       getReceta(){
          axios
-            .get('https://iawek-servicio-web.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta')
+
+            .get('http://localhost:8080/ingrediente/'+this.id_ingrediente+'/receta')
             .then(response => response.data.forEach(element => {
                     
                 axios
-                .get('https://iawek-servicio-web.herokuapp.com/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
+                .get('http://localhost:8080/ingrediente/'+this.id_ingrediente+'/receta/'+element.id_receta)
                 .then(res => this.recetas.push(res.data))
  
                 }))
