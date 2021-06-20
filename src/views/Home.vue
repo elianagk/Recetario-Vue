@@ -30,7 +30,7 @@
 
     <div id="fondoItems">
       
-      <b-col cols="11" class="justify-content-end d-flex mt-3">
+      <b-col cols="10" class="justify-content-end d-flex mt-3">
         <input type="text" v-model="search"  placeholder="Buscar receta">
       </b-col>
       <b-container>
