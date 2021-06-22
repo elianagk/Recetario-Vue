@@ -2,7 +2,7 @@
 <template>
           
         <b-card 
-            :title="ingrediente.nombre" 
+            :title="ingrediente.nombre.toUpperCase().charAt(0) + ingrediente.nombre.toLowerCase().slice(1)" 
             class="card mt-3 text-center"   
         >     
             <template #footer>

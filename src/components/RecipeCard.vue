@@ -1,7 +1,7 @@
 <template>
 
         <b-card 
-            :title="receta.nombre" 
+            :title="receta.nombre.toUpperCase().charAt(0) + receta.nombre.toLowerCase().slice(1)" 
             class="card mt-3 text-center"
             :img-src="receta.image" 
             img-alt="Imagen" 

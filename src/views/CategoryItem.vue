@@ -2,17 +2,15 @@
   <div id="fondoCards" class="CategoryRecipes">
 
     <div id="fondoText">
-      <h1 class="text-center">Receta</h1> 
+      <h1 class="text-center">Recetas</h1> 
     </div>
       <b-container>
       <b-row>
           
         <b-col md="3" sm="6" cols="12" v-for="n in recetas.length" :key="n">
-         
-          <b-col  v-for="receta in recetas[n-1]" :key="receta.id_receta">
+          <span v-for="receta in recetas[n-1]" :key="receta.id_receta">
             <RecipeCard :receta="receta" />  
-          </b-col>
-  
+          </span>
         </b-col>
       </b-row>
     </b-container>
@@ -35,6 +33,7 @@ export default {
           r:[]
       }   
     },
+    
     mounted() {
       this.id_categoria = this.$route.params.id_categoria
       this.getReceta();

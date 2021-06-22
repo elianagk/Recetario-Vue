@@ -39,9 +39,12 @@ export default {
     },
     computed: {
       categoriasFiltradas: function(){
+        if(!(this.categorias === null)){
          return this.categorias.filter((categoria) => {
               return categoria.nombre.toUpperCase().match(this.search.toUpperCase());
           });
+        }
+        return []
       }
     },
     mounted() {

@@ -38,9 +38,12 @@ export default {
     },
     computed: {
       ingredientesFiltrados: function(){
+        if(!(this.ingredientes === null)){
          return this.ingredientes.filter((ingrediente) => {
               return ingrediente.nombre.toUpperCase().match(this.search.toUpperCase());
           });
+        }
+        return []
       }
     },
     mounted() {

@@ -1,7 +1,7 @@
 <template>
            
         <b-card 
-            :title="categoria.nombre" 
+            :title="categoria.nombre.toUpperCase().charAt(0) + categoria.nombre.toLowerCase().slice(1)" 
             class="card mt-3 text-center"   
         >     
             <template #footer>
