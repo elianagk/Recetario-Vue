@@ -3,7 +3,7 @@
         <b-card 
             :title="receta.nombre.toUpperCase().charAt(0) + receta.nombre.toLowerCase().slice(1)" 
             class="card mt-3 text-center"
-            :img-src="receta.image" 
+            :img-src="getImagen(receta.image)" 
             img-alt="Imagen" 
             img-top
         >     
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-
+import default_image from "@/assets/default_image.png"
 
 export default {
     name: "RecipeCard",
@@ -26,6 +26,16 @@ export default {
         "receta",
         
     ],
+    methods: {
+        getImagen(imagen){
+            if (imagen != null){
+                return imagen
+            }
+            else{
+                return default_image
+            }
+        }
+    }
    
 }
 </script>

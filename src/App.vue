@@ -13,6 +13,7 @@
     </b-collapse>
   </b-navbar>
   <router-view />
+  
 </div>
 </template>
 
