@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueSocialSharing from 'vue-social-sharing'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
 import router from './router'
@@ -13,7 +15,8 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
-
+Vue.use(VueSocialSharing);
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   router,

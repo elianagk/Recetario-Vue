@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <b-navbar toggleable="lg" type="dark" variant="dark">
     <b-navbar-brand to="/" >Recetario</b-navbar-brand>
 
@@ -12,6 +13,7 @@
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
+  
   <router-view />
   
 </div>
