@@ -29,7 +29,16 @@
           </b-card-text>
         </b-tab>
       </b-tabs>
-    
+      <ShareNetwork
+          network="whatsapp"
+          :url="
+            'https://frozensea-recipe.herokuapp.com/receta/' + receta.id_receta
+          "
+          :title="receta.nombre"
+          class="whatsapp"
+        >
+         <i class="fa fa-whatsapp whatsapp-icon" ></i>
+        </ShareNetwork>
 
   </b-card>
 </template>
@@ -54,5 +63,23 @@ export default {
 
 #line {
   border: 1px rgb(97, 18, 112) solid;
+}
+
+.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
 }
 </style>

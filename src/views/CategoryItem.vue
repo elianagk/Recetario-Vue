@@ -5,14 +5,16 @@
       <h1 class="text-center">Recetas</h1> 
     </div>
       <b-container>
-      <b-row>
-          
+      <b-row v-if="recetas.length"> 
         <b-col md="3" sm="6" cols="12" v-for="n in recetas.length" :key="n">
           <span v-for="receta in recetas[n-1]" :key="receta.id_receta">
             <RecipeCard :receta="receta" />  
           </span>
         </b-col>
       </b-row>
+      <b-row v-else>
+          <EmptySection />
+        </b-row>
     </b-container>
 
   </div>
@@ -21,11 +23,13 @@
 <script>
 
 import RecipeCard from "@/components/RecipeCard"
+import EmptySection from "@/components/EmptySection"
 import axios from "axios"
 export default {
    name: 'Recipes',
     components: {
-      RecipeCard
+      RecipeCard,
+      EmptySection
     },
     data() {
       return {

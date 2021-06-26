@@ -11,10 +11,13 @@
         <input type="text" v-model="search"  placeholder="Buscar categoria">
       </b-col>
       <b-container>
-        <b-row>
+        <b-row v-if="categoriasFiltradas.length">
           <b-col md="3" sm="6" cols="12" v-for="categoria in categoriasFiltradas" :key="categoria.id_categoria">
             <CategoryCard :categoria="categoria" />  
           </b-col>
+        </b-row>
+        <b-row v-else>
+          <EmptySection />
         </b-row>
       </b-container>
     </div>
@@ -24,12 +27,14 @@
 
 <script>
 import CategoryCard from "@/components/CategoryCard"
+import EmptySection from "@/components/EmptySection"
 import axios from "axios"
 
 export default {
     name: 'Home',
     components: {
-      CategoryCard
+      CategoryCard,
+      EmptySection
     },
     data() {
       return {
