@@ -1,9 +1,13 @@
 module.exports = {
     pwa: {
-        name: "frozensea-recipe",
-        workboxPluginMode: "InjectManifest",
+        workboxPluginMode: 'InjectManifest',
         workboxOptions: {
-            swSrc: "src/registerServiceWorker.js"
-        }
-    }
+            swSrc: 'src/service-worker.js',
+            exclude: [
+                /\.map$/, 
+                /manifest\.json$/ 
+            ],
+        },
+        themeColor: '#1da025'
+    },
 }
