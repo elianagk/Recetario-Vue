@@ -13,13 +13,8 @@ import { BootstrapVue } from 'bootstrap-vue'
 // Import Bootstrap an BootstrapVue CSS files (order is important)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import './registerServiceWorker'
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js');
-  });
-}
+
 
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
