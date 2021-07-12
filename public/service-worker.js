@@ -1,12 +1,8 @@
 
 const CACHE_NAME = 'v1_cache_frozen',
 urlsToCache= [
-  './',
-  './public/favicon.ico',
-  './src/views/Home.vue',
-  './src/views/Recipes.vue',
-  './src/components/RecipeCard.vue',
-  './src/components/RecipeItemCard.vue'
+    './',
+    './script.js',
 
 
 ]
@@ -53,8 +49,27 @@ self.addEventListener('fetch', e => {
           //recuperar del cache
           return res
         }
-        //recuperar de la petición a la url
-        return fetch(e.request)
+        
+
+        return fetch(e.request).then(
+          function(response) {
+            // Si la respuesta es valida
+            if(!response || response.status !== 200) {
+              return response;
+            }
+
+            //Clonamos la respuesta, porque es un stream y tanto el navegador
+            //como la cache lo van a consumir, entonces como no se puede consumir dos veces
+            //el mismo stream, hay que clonar la respuesta
+            var responseToCache = response.clone();
+
+            caches.open(CACHE_NAME)
+              .then(function(cache) {
+                cache.put(e.request, responseToCache);
+              });
+            return response;
+          }
+        );
       })
   )
 })
